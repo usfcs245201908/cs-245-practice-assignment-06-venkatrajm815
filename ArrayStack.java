@@ -3,7 +3,7 @@
 
 public class ArrayStack<T> implements Stack<T>
 {
-	T[] a = (T[]) new Object[600];
+	T[] a = (T[]) new Object[10];
 	int top = 0;
 
 	//push function
@@ -55,10 +55,12 @@ public class ArrayStack<T> implements Stack<T>
 	{
 		//creates temp array that has double the length of original array a
 		//adds all elements in array a to array temp
+		//then a is equal to the temp array
 		T[] temp = (T[]) new Object[a.length*2];
 		for (int i = 0; i < a.length; i++)
 		{
 			temp[i] = a[i];
 		}
+		a = temp;
 	}
 }
